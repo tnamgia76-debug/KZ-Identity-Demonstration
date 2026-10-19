@@ -1,0 +1,39 @@
+{
+  "date_local": "2026-10-20",
+  "machine": "macOS-26.0-arm64-arm-64bit",
+  "node": "v24.19.0",
+  "base_commit": "ee19f1d00f7ed9777d068ef965915d9d97830ed3",
+  "results": [
+    {
+      "script": "01_identity.js",
+      "exit_code": 0,
+      "stdout": "=== STEP 1: SEMAPHORE IDENTITIES ===\nStudent A commitment: 12359008306681269729953080953333174167667170438790809856851101646174208631675\nStudent B commitment: 2038188234010291261748601258540133803034512485371661254960649115317730608919\nStudent C commitment: 16262566503732726684567958780303549506163474479955178387670310789754090216987\n",
+      "stderr": ""
+    },
+    {
+      "script": "02_group.js",
+      "exit_code": 0,
+      "stdout": "=== STEP 2: SEMAPHORE GROUP ===\nNumber of members: 3\nMerkle Root: 6498286868080503464706567261660316009394353363423272750810098232448081721079\n",
+      "stderr": ""
+    },
+    {
+      "script": "03_generate_proof.js",
+      "exit_code": 0,
+      "stdout": "=== STEP 3: ZK PROOF ===\nVoter: Student B\nMessage: YES\nScope: NEU_BLOCKCHAIN_ELECTION_2026\n\nGenerating ZK proof...\nProof generation time: 1.581 seconds\nProof valid: true\nProof exported: proof.json\n",
+      "stderr": ""
+    },
+    {
+      "script": "04_nullifier_test.js",
+      "exit_code": 0,
+      "stdout": "=== STEP 4: NULLIFIER TEST ===\nFirst nullifier : 16523579051188024369005266188935954535497426080463518653636934540149481224375\nSecond nullifier: 16523579051188024369005266188935954535497426080463518653636934540149481224375\nSame nullifier: true\n",
+      "stderr": ""
+    },
+    {
+      "script": "05_nonmember_test.js",
+      "exit_code": 0,
+      "stdout": "=== STEP 5: NON-MEMBER TEST ===\nResult: outsider cannot prove group membership\nReason: The leaf at index '-1' does not exist in this tree\n",
+      "stderr": ""
+    }
+  ],
+  "proof_json_original_restored": "665a233dd3ba6840ef771bbcd763d99c048bf314228a27ae89ea818562a6dccf"
+}

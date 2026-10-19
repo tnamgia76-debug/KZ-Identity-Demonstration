@@ -1,0 +1,7 @@
+{
+  "storedProofValid": true,
+  "changedScopeProofValid": true,
+  "changedScopeNullifierDifferent": true,
+  "duplicateNullifierErrorSelector": "0x208b15e8",
+  "onchainTransactionsSubmitted": 0
+}

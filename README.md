@@ -1,5 +1,13 @@
 # ZK Identity Demonstration with Semaphore
 
+## Research content and demo evidence
+
+The Vietnamese research draft prepared for Nguyễn Hữu Anh's assignment is available as [Word](docs/REPORT_VI.docx) and [Markdown](docs/REPORT_VI.md). See the [primary-source register and claim matrix](docs/SOURCES.md), [original screenshot index](docs/SNAPSHOTS.md), and [contribution log](CONTRIBUTION_LOG.md).
+
+Review dated **2026-10-20**, against original commit `ee19f1d`. The five off-chain scripts and original `proof.json` verified locally. The historical screenshot shows **1.199 seconds** for proving and **490,380 gas for the whole vote transaction**; a separate review rerun measured 1.581 seconds. These are individual observations, not a benchmark average. The Sepolia screenshots were supplied by the group; current chain state was not independently retrieved during this review.
+
+The current contract accepts caller-chosen scopes and has an unrestricted membership wrapper. It demonstrates duplicate-nullifier rejection in a group, but does not yet enforce one identity per election across arbitrary scopes or one real person per identity. The sample identity seeds are public, and YES/NO and transaction sender addresses remain public. Read the report's limitations before presenting the privacy and voting guarantees. The existing application code is unchanged in this documentation contribution.
+
 A Zero-Knowledge Identity demo using **Semaphore V4**, Node.js, Solidity, Remix, MetaMask, and the Ethereum Sepolia testnet.
 
 This project demonstrates that a user can prove:
@@ -1119,10 +1127,10 @@ Semaphore V4 uses Groth16-based proofs.
 During testing, proof generation took approximately:
 
 ```text
-~0.4–0.9 seconds
+1.199 seconds in the supplied demo screenshot
 ```
 
-depending on the run and local machine.
+The separate 2026-10-20 review rerun measured 1.581 seconds on macOS arm64 with Node.js 24.19.0. These are single-run observations from different environments; see the report and evidence logs.
 
 A formal benchmark should use multiple runs rather than one measurement.
 
